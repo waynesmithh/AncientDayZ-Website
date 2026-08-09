@@ -6,6 +6,7 @@
     <title>AncientDayZ | Official Portal</title>
     <style>
         :root {
+            color-scheme: dark;
             --bg-dark: #0f1115;
             --bg-card: #181b22;
             --accent: #d97706; /* Tactical amber accent */
@@ -13,6 +14,10 @@
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
             --border: #2d323e;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -64,6 +69,8 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
@@ -73,6 +80,7 @@
 
         .btn-primary:hover {
             background-color: var(--accent-hover);
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
@@ -84,9 +92,25 @@
         .btn-secondary:hover {
             background-color: var(--bg-card);
             border-color: var(--text-muted);
+            transform: translateY(-1px);
         }
 
-        .container {
+        .btn-copy {
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            background: var(--border);
+            color: var(--text-main);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-copy:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        main {
             max-width: 1000px;
             margin: 40px auto 0;
             padding: 0 20px;
@@ -169,6 +193,11 @@
             border: 1px solid var(--border);
             padding: 12px 15px;
             border-radius: 6px;
+            transition: border-color 0.2s ease;
+        }
+
+        .mod-item:hover {
+            border-color: var(--accent);
         }
 
         .mod-item strong {
@@ -185,12 +214,19 @@
         .info-row {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 10px 0;
             border-bottom: 1px solid var(--border);
         }
 
         .info-row:last-child {
             border-bottom: none;
+        }
+
+        .discord-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
         }
 
         footer {
@@ -205,14 +241,14 @@
 
     <header>
         <h1>AncientDayZ</h1>
-        <p>Survival | PVP | Keycards | Custom Mods | BTC Farming </p>
+        <p>Survival | PVP | Keycards | Custom Mods | BTC Farming</p>
         <div class="btn-group">
-            <a href="https://discord.gg/5pBuGUBWdR" target="_blank" class="btn btn-primary">Join Discord</a>
+            <a href="https://discord.gg/5pBuGUBWdR" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Join Discord</a>
             <a href="#rules" class="btn btn-secondary">Read Rules</a>
         </div>
     </header>
 
-    <div class="container">
+    <main>
         <div class="grid">
             
             <!-- Server Connection Info -->
@@ -220,11 +256,14 @@
                 <h2>Connection Info</h2>
                 <div class="info-row">
                     <span>Server Name</span>
-                    <strong>[US] Server Name | 2x Gather | Custom Mods</strong>
+                    <strong>AncientDayZ | 2x Gather | Custom Mods | Keycards</strong>
                 </div>
                 <div class="info-row">
                     <span>Server IP / Port</span>
-                    <strong>123.456.789.10:2302</strong>
+                    <div>
+                        <strong id="server-ip">5.226.142.33:2302</strong>
+                        <button class="btn btn-copy" onclick="copyIP(this)">Copy IP</button>
+                    </div>
                 </div>
                 <div class="info-row">
                     <span>Map</span>
@@ -259,8 +298,17 @@
                 </ol>
             </div>
 
-            <!-- Key Features / Mod List -->
+            <!-- Discord Widget Container -->
             <div class="card">
+                <h2>Community Discord</h2>
+                <div class="discord-container">
+                    <!-- Replace YOUR_DISCORD_SERVER_ID with your actual Discord Server ID -->
+                    <iframe src="https://discord.com/widget?id=YOUR_DISCORD_SERVER_ID&theme=dark" width="100%" height="320" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                </div>
+            </div>
+
+            <!-- Key Features / Mod List -->
+            <div class="card full-width">
                 <h2>Installed Mods & Features</h2>
                 <div class="mod-grid">
                     <div class="mod-item">
@@ -295,7 +343,20 @@
         <footer>
             <p>&copy; 2026 AncientDayZ. All rights reserved.</p>
         </footer>
-    </div>
+    </main>
+
+    <script>
+        function copyIP(btn) {
+            const ipText = document.getElementById('server-ip').innerText;
+            navigator.clipboard.writeText(ipText).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = 'Copied!';
+                setTimeout(() => { btn.innerText = originalText; }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
 
 </body>
 </html>
