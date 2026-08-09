@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AncientDayZ | Official Portal</title>
+    <style>
+        :root {
+            --bg-dark: #0f1115;
+            --bg-card: #181b22;
+            --accent: #d97706; /* Tactical amber accent */
+            --accent-hover: #f59e0b;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border: #2d323e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: linear-gradient(180deg, rgba(15,17,21,0.8) 0%, var(--bg-dark) 100%), #1f242d;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-card);
+            border-color: var(--text-muted);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto 0;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .full-width {
+                grid-column: span 2;
+            }
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .rules-list {
+            list-style-type: none;
+            counter-reset: rule-counter;
+        }
+
+        .rules-list li {
+            counter-increment: rule-counter;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 35px;
+        }
+
+        .rules-list li::before {
+            content: counter(rule-counter);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            background-color: var(--border);
+            color: var(--accent);
+            font-weight: bold;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .rules-list strong {
+            color: #ffffff;
+            display: block;
+        }
+
+        .mod-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .mod-item {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            padding: 12px 15px;
+            border-radius: 6px;
+        }
+
+        .mod-item strong {
+            display: block;
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        .mod-item span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AncientDayZ</h1>
+        <p>Survival | PVP | Keycards | Custom Mods | BTC Farming </p>
+        <div class="btn-group">
+            <a href="https://discord.gg/5pBuGUBWdR" target="_blank" class="btn btn-primary">Join Discord</a>
+            <a href="#rules" class="btn btn-secondary">Read Rules</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            
+            <!-- Server Connection Info -->
+            <div class="card full-width">
+                <h2>Connection Info</h2>
+                <div class="info-row">
+                    <span>Server Name</span>
+                    <strong>[US] Server Name | 2x Gather | Custom Mods</strong>
+                </div>
+                <div class="info-row">
+                    <span>Server IP / Port</span>
+                    <strong>123.456.789.10:2302</strong>
+                </div>
+                <div class="info-row">
+                    <span>Map</span>
+                    <strong>ChernarusPlus / Custom</strong>
+                </div>
+                <div class="info-row">
+                    <span>Restarts</span>
+                    <strong>Every 4 Hours (12AM / 4AM / 8AM / 12PM / 4PM / 8PM EST)</strong>
+                </div>
+            </div>
+
+            <!-- Server Rules -->
+            <div class="card" id="rules">
+                <h2>Server Rules</h2>
+                <ol class="rules-list">
+                    <li>
+                        <strong>Respect & Conduct</strong>
+                        No hate speech, toxic harassment, or real-world threats in game or global voice/text chat.
+                    </li>
+                    <li>
+                        <strong>No Glitching or Exploiting</strong>
+                        Under-meshing, combat logging, item duplication, or abusing engine bugs results in a permanent ban.
+                    </li>
+                    <li>
+                        <strong>Base Building Limits</strong>
+                        Maximum 2 main bases per clan. Do not block major military loot spawns or high-value infrastructure.
+                    </li>
+                    <li>
+                        <strong>Metagaming & Stream Sniping</strong>
+                        Do not use external streams or metagamed information to gain an unfair tactical advantage.
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Key Features / Mod List -->
+            <div class="card">
+                <h2>Installed Mods & Features</h2>
+                <div class="mod-grid">
+                    <div class="mod-item">
+                        <strong>Custom Traders</strong>
+                        <span>Balanced economy layout</span>
+                    </div>
+                    <div class="mod-item">
+                        <strong>Expanded Armory</strong>
+                        <span>Tactical weapons & gear</span>
+                    </div>
+                    <div class="mod-item">
+                        <strong>Building Plus</strong>
+                        <span>Enhanced snap-building</span>
+                    </div>
+                    <div class="mod-item">
+                        <strong>Custom Vehicles</strong>
+                        <span>Tweaked spawns & inventory</span>
+                    </div>
+                    <div class="mod-item">
+                        <strong>QoL Tweaks</strong>
+                        <span>Infinite stamina, quick craft</span>
+                    </div>
+                    <div class="mod-item">
+                        <strong>Map & Party System</strong>
+                        <span>Group UI & waypoints</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2026 AncientDayZ. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
