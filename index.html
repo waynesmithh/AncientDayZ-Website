@@ -148,38 +148,34 @@
             letter-spacing: 1px;
         }
 
+        .rules-section {
+            margin-bottom: 25px;
+        }
+
+        .rules-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .rules-section h3 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            border-left: 3px solid var(--accent);
+            padding-left: 10px;
+        }
+
         .rules-list {
-            list-style-type: none;
-            counter-reset: rule-counter;
+            list-style-type: disc;
+            padding-left: 20px;
+            color: var(--text-muted);
         }
 
         .rules-list li {
-            counter-increment: rule-counter;
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 35px;
-        }
-
-        .rules-list li::before {
-            content: counter(rule-counter);
-            position: absolute;
-            left: 0;
-            top: 2px;
-            background-color: var(--border);
-            color: var(--accent);
-            font-weight: bold;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
+            margin-bottom: 8px;
         }
 
         .rules-list strong {
             color: #ffffff;
-            display: block;
         }
 
         .mod-grid {
@@ -229,6 +225,16 @@
             margin-top: 10px;
         }
 
+        .notice-box {
+            background-color: var(--bg-dark);
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
         footer {
             text-align: center;
             margin-top: 50px;
@@ -256,7 +262,7 @@
                 <h2>Connection Info</h2>
                 <div class="info-row">
                     <span>Server Name</span>
-                    <strong>AncientDayZ | 2x Gather | Custom Mods | Keycards</strong>
+                    <strong>AncientDayZ | Survival | PVP | Keycards | Custom Mods | BTC Farming</strong>
                 </div>
                 <div class="info-row">
                     <span>Server IP / Port</span>
@@ -276,26 +282,99 @@
             </div>
 
             <!-- Server Rules -->
-            <div class="card" id="rules">
+            <div class="card full-width" id="rules">
                 <h2>Server Rules</h2>
-                <ol class="rules-list">
-                    <li>
-                        <strong>Respect & Conduct</strong>
-                        No hate speech, toxic harassment, or real-world threats in game or global voice/text chat.
-                    </li>
-                    <li>
-                        <strong>No Glitching or Exploiting</strong>
-                        Under-meshing, combat logging, item duplication, or abusing engine bugs results in a permanent ban.
-                    </li>
-                    <li>
-                        <strong>Base Building Limits</strong>
-                        Maximum 2 main bases per clan. Do not block major military loot spawns or high-value infrastructure.
-                    </li>
-                    <li>
-                        <strong>Metagaming & Stream Sniping</strong>
-                        Do not use external streams or metagamed information to gain an unfair tactical advantage.
-                    </li>
-                </ol>
+                
+                <div class="rules-section">
+                    <h3>General Rules</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 10px; font-size: 0.9rem;">
+                        Read the rules. Not knowing them doesn’t protect you. Staff aim to be fair, but may act at their discretion to protect the community and gameplay.
+                    </p>
+                    <ul class="rules-list">
+                        <li>English only in public channels (LFG can vary).</li>
+                        <li>Banter is fine — no harassment, discrimination, hate speech, or targeted toxicity (Discord or in-game).</li>
+                        <li>Don’t DM/ping/impersonate staff. Use tickets.</li>
+                        <li>No personal info (yours or anyone else’s).</li>
+                        <li>No NSFW content (names, pics, messages, links).</li>
+                        <li><strong>Zero tolerance threats:</strong> DDoS, doxxing, death threats, encouraging self-harm = permanent ban.</li>
+                        <li>No spam / ping abuse / flooding / disruptive behavior.</li>
+                        <li>No advertising, invites, or external links without permission.</li>
+                        <li>Don’t “hackusate” or discuss active ticket information in public chats.</li>
+                        <li>Don’t argue bans/cheaters/staff abuse in public channels. Open a ticket.</li>
+                    </ul>
+                </div>
+
+                <div class="rules-section">
+                    <h3>Gameplay & Fair Play</h3>
+                    <ul class="rules-list">
+                        <li><strong>Cheating & Exploits:</strong> Duping, hacking, scripts, exploits, glitching, or bug abuse (including “vortexing”) are forbidden.</li>
+                        <li><strong>Alt Accounts:</strong> Alternate accounts are strictly not allowed (ban evasion leads to permanent bans).</li>
+                        <li><strong>Movement Exploits:</strong> No moonwalk or ice sliding.</li>
+                        <li><strong>Team Killing:</strong> No team killing for kill quests.</li>
+                        <li><strong>Stream Sniping:</strong> Stream sniping Content Creators is forbidden and handled case-by-case.</li>
+                    </ul>
+                </div>
+
+                <div class="rules-section">
+                    <h3>Combat Logging & No Relog Zones</h3>
+                    <ul class="rules-list">
+                        <li>No logging out for 5 minutes after you or your group have dealt/received damage.</li>
+                        <li>If you crash, restart, or disconnect, rejoin immediately.</li>
+                        <li><strong>No Relog Zones:</strong> Includes Toxic Zones, Events, and high-risk areas. Logging out inside a No Relog Zone to avoid PvP is treated as combat logging regardless of last damage.</li>
+                    </ul>
+                </div>
+
+                <div class="rules-section">
+                    <h3>Vehicle Rules</h3>
+                    <ul class="rules-list">
+                        <li>Operating vehicles is at the user’s own risk.</li>
+                        <li>No heli ramming.</li>
+                    </ul>
+                </div>
+
+                <div class="rules-section">
+                    <h3>Group Limits & Alliances</h3>
+                    <ul class="rules-list">
+                        <li><strong>Group Size:</strong> 4-Man max per group (online + offline). No rotations — permanent swaps only. Left players cannot rejoin.</li>
+                        <li><strong>No Alliancing/Teaming:</strong> Strictly forbidden. Paying for services (transport, supplying C4 for raids, raid protection) is prohibited.</li>
+                        <li><strong>Trading:</strong> Must happen in Safezone or it will be considered teaming.</li>
+                    </ul>
+                </div>
+
+                <div class="rules-section">
+                    <h3>Base-Building Rules</h3>
+                    <ul class="rules-list">
+                        <li><strong>Design Constraints:</strong> Land-built with proper support (no floating, sky, or water-only bases). Fully raidable from ground level. No glitch, trap, parkour, or unraidable bases.</li>
+                        <li><strong>Restrictions:</strong> 1 base per team | 1 sleeping bag per player | Max 15 doors | Max 300 Panels.</li>
+                        <li><strong>No Blocking:</strong> Do not block wells, roads, event spawns, loot containers, or static structures (police, military, medical).</li>
+                        <li><strong>Sightlines:</strong> Equal-opportunity 2-way angles required (no toe/hip/pixel peaks, no "can't raise your gun" kill slots).</li>
+                        <li><strong>Defenses:</strong> No barbed wire in raid paths or blocking loot/entrances with items/vehicles. No forced vault/jump/crawl/ladder animations to reach loot/flag.</li>
+                        <li><strong>Window Bypassing:</strong> Allowed only if every area remains fully clearable after breaching doors.</li>
+                    </ul>
+                </div>
+
+                <div class="rules-section">
+                    <h3>Raiding & Takeovers</h3>
+                    <ul class="rules-list">
+                        <li>Soft-side/dismantle raiding is allowed if legal (no glitches). If you accidentally bug in, relog and open a ticket.</li>
+                        <li><strong>30-Min Post-Charge Rule:</strong> Defenders cannot build, upgrade, attach codelocks, or reinforce defenses for 30 mins after the last explosive is used. Traps (mines, claymores, tripwires) are allowed.</li>
+                        <li><strong>Logging Off:</strong> Logging off while defending an active raid = 3-day ban min + forfeit raid loot. Use F11 if leaving. Raiders must also wait 30 mins post-charge to log off.</li>
+                        <li><strong>Takeovers:</strong> You may only fully take over a base if you do not already have one.</li>
+                    </ul>
+                </div>
+
+                <div class="rules-section">
+                    <h3>Safe Zones & Compensation (Comps)</h3>
+                    <ul class="rules-list">
+                        <li>No mic spam or disruptive noise.</li>
+                        <li>Trading/Gambling is at your own risk. Do not drop items on the floor (autoclean deletes items instantly). Vehicles left too long may be deleted.</li>
+                        <li><strong>NO CLIP NO COMP:</strong> Video evidence required showing items requested and full event leading up to/during/after loss.</li>
+                    </ul>
+                </div>
+
+                <div class="notice-box">
+                    Players may be removed or denied access if they are found to be using, linked to, or evading through accounts with BattlEye bans or other confirmed cheating history related to DayZ. Access to the server is at staff discretion when protecting competitive integrity.
+                </div>
             </div>
 
             <!-- Discord Widget Container -->
@@ -308,7 +387,7 @@
             </div>
 
             <!-- Key Features / Mod List -->
-            <div class="card full-width">
+            <div class="card">
                 <h2>Installed Mods & Features</h2>
                 <div class="mod-grid">
                     <div class="mod-item">
